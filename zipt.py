@@ -43,7 +43,7 @@ def main():
         sys.exit(f'File "{args.zip}" does not exist')
     if args.updated:
         now = DateTime.utcnow()
-        overwrites[UPDATED_FILENAME] = now.strftime('%Y%m%d %H%M%S')
+        overwrites[UPDATED_FILENAME] = now.strftime('%Y/%m/%d %H:%M:%S\n')
     if not zipfile.is_zipfile(args.zip):
         create_zip(args.zip, overwrites)
     else:
